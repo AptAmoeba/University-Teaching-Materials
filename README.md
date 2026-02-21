@@ -4,13 +4,25 @@ A repo for my students to fetch class materials. Mostly scripts to speed up clas
 &nbsp;
 
 # (Boomer) Recovering Quarantined Files
+## Making the Exclusion Folder for Evidence Preservation
 
+Open File Explorer, browse to: 'C:\temp\'. Create a new folder in there called "Infected"
+
+Windows Key, type "Defender" -> Search
+
+In Defender, Click into "Virus & Threat Protection" -> (Scroll down) "Virus & Threat Protection Settings - Manage Settings" -> (Scroll to bottom) "Exclusions - Add or Remove Exclusions" -> Add a "Folder" exclusion for "C:\temp\Infected"
+
+This will exclude these files from being auto-quarantined again before we can zip them.
+
+While in the Exclusions area, check and see if any exclusions were added. There shouldn't be any - any existing exclusions may be from this virus.
+&nbsp;
+
+## Collecting Quarantined Files
 Windows Key, type "CMD" -> Hit "Run as Administrator"
 
 Run the following commands in order:
-- mkdir C:\Temp\Infected
 - "%ProgramFiles%\Windows Defender\MpCmdRun.exe" -Restore -ListAll
-- "%ProgramFiles%\Windows Defender\MpCmdRun.exe" -Restore -All -Path "C:\Temp\Infected"
+- "%ProgramFiles%\Windows Defender\MpCmdRun.exe" -Restore -All -Path "C:\temp\Infected"
 
 Malware will be moved to C:\Temp\Infected. Use a zipping tool to Zip + Password Protect this Folder. Transport the folder to a shared destination, like a temp site or email (email in DMs). The zipping + password should make the virus folder evade all email security.
 
@@ -27,7 +39,7 @@ Right-Click same task again, hit "Properties" -> Go into "Actions" tab.
 
 Copy EVERYTHING (Ctrl + A) in that command window and either send to me in Discord or save to a text file. If you have time, having it in a text file would be great.  
 
-Back in the Tasks window, we will *again* Right-Click that Task, and then hit "Export." Export the resulting XML file to C:\Temp\Infected. This is good evidence, and should be sent to me
+Back in the Tasks window, we will *again* Right-Click that Task, and then hit "Export." Export the resulting XML file to C:\temp\Infected. This is good evidence, and should be sent to me
 
 &nbsp;
 
@@ -38,7 +50,7 @@ Windows Key, type "CMD" -> Hit "Run as Administrator"
 Run the following commands in order:
 
 - dir "C:\Winddows\System32\Tasks"
-- copy C:\Windows\System32\Tasks\Item2 C:\Temp\Infected
+- copy C:\Windows\System32\Tasks\Item2 C:\temp\Infected
 
 This will copy the Item2 task to the Infected folder. This should be sent to me as well
 
